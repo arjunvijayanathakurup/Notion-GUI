@@ -1,0 +1,22 @@
+{
+  "name": "notion-gui",
+  "version": "1.0.0",
+  "description": "A electron based GUI application for Notion on Linux.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-linux": "electron-packager . notion-gui --overwrite --asar=true --platform=linux --arch=x64 --icons=assets/icons/png/512x512.png --prune=true --out=release-builds",
+    "create-debian-installer": "electron-installer-debian --src release-builds/notion-gui-linux-x64/ --dest dist/installer/ --arch amd64 --config debian.json"
+  },
+  "author": "Arjun V",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^11.0.3",
+    "electron-installer-debian": "^3.1.0",
+    "electron-installer-dmg": "^3.0.0",
+    "electron-installer-windows": "^3.0.0",
+    "electron-packager": "^15.1.0"
+  },
+  "dependencies": {
+  }
+}
